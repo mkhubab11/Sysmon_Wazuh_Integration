@@ -1,7 +1,3 @@
-# Sysmon_Wazuh_Integration
-A hands-on SOC home lab integrating Microsoft Sysmon with Wazuh SIEM for Windows endpoint monitoring, security event collection, threat detection, alert investigation, and MITRE ATT&CK mapping.
-
-
 # Sysmon Integration with Wazuh
 
 ### Advanced Endpoint Monitoring and Threat Detection in a SOC Lab
@@ -114,6 +110,8 @@ The goal was to understand how endpoint telemetry can help SOC analysts investig
 Download Sysmon from the official Microsoft Sysinternals website:
 
 [https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon)
+<img width="814" height="333" alt="Screenshot 2026-10-01 155710" src="https://github.com/user-attachments/assets/4f9e4bc2-64e1-4bec-bdfc-fd58f560937c" />
+
 
 Extract the downloaded archive to a directory such as `C:\sysmon`.
 
@@ -134,6 +132,7 @@ Install Sysmon with the configuration:
 ```
 .\Sysmon64.exe -accepteula -i sysmonconfig.xml
 ```
+<img width="975" height="510" alt="Screenshot 2026-10-01 160244" src="https://github.com/user-attachments/assets/57d5d128-e124-45a8-bc9b-bd23380a5aa1" />
 
 The configuration determines which events Sysmon records and helps balance useful security visibility against excessive event volume.
 
@@ -170,6 +169,7 @@ Example configuration:
 
 </agent_config>
 ```
+<img width="1335" height="296" alt="Screenshot 2026-10-01 155602" src="https://github.com/user-attachments/assets/1d278702-3bc9-4c77-bfc4-8348f95d04e4" />
 
 Add this block to the appropriate agent group configuration in the Wazuh manager. The exact group configuration file and deployment method depend on your Wazuh setup.
 
@@ -196,6 +196,7 @@ To validate the monitoring pipeline, the project used a controlled PowerShell co
 ```
 powershell.exe -nop -w hidden -c "Write-Host 'Testing Fileless Detection'"
 ```
+<img width="725" height="60" alt="Screenshot 2026-10-01 160326" src="https://github.com/user-attachments/assets/2d3a39d0-ca93-4a0e-813f-e26d36c8b26e" />
 
 This command launches PowerShell with no profile and a hidden window, then prints a test message. It is a benign demonstration command, not a real fileless malware sample.
 
@@ -224,6 +225,7 @@ The investigation focused on:
 * MITRE ATT&CK mappings
 
 * Relevant user and endpoint details
+<img width="1352" height="570" alt="Screenshot 2026-10-01 155358" src="https://github.com/user-attachments/assets/c8297220-bd29-4be9-adb5-e1e91133e0b9" />
 
 One documented alert involved Firefox creating a JavaScript file in a user-profile directory. The event was classified by the configured ruleset under MITRE ATT&CK technique **T1059.007 — JavaScript**.
 
@@ -240,6 +242,7 @@ The project report documented mappings including:
 * **T1059:** Command and Scripting Interpreter
 
 * **T1105:** Ingress Tool Transfer
+<img width="1362" height="570" alt="Screenshot 2026-10-01 161112" src="https://github.com/user-attachments/assets/13279921-2c52-4595-b974-1749e545462a" />
 
 These mappings provide investigative context. They should not be interpreted as proof that an attacker successfully performed the corresponding technique.
 
@@ -260,9 +263,6 @@ The project demonstrated the following:
 * The Wazuh dashboard provided a centralized location for reviewing endpoint events and investigating alerts.
 
 
-```
-
-
 ## 👨‍💻 Author
 
 **Muhammad Khubab**
@@ -273,24 +273,5 @@ The project demonstrated the following:
 
 * **LinkedIn:** [Muhammad Khubab](https://www.linkedin.com/in/muhammad-khubab-475046204)
 
-## 📄 License
 
-This repository is intended for educational purposes and cybersecurity portfolio demonstration.
-
-If you want others to reuse and modify your original code or documentation, consider adding an open-source license. Ensure that any third-party configurations retain their original license and attribution.
-
-## Before publishing to GitHub
-
-1. Save this content as `README.md` in your `sysmon-wazuh-integration` repository.
-
-2. Convert your report to PDF and upload it to `docs/Sysmon_Wazuh_Report.pdf`.
-
-3. Add the real screenshots and ensure their filenames match the README.
-
-4. Review configuration examples and remove any sensitive information.
-
-5. Preview the README on GitHub to verify that the headings, badges, architecture, and screenshots render correctly.
-
-Suggested repository description:
-
-> A hands-on SOC lab integrating Microsoft Sysmon with Wazuh SIEM for Windows endpoint monitoring, security event collection, alert investigation, and MITRE ATT&CK mapping.
+> A hands-on SOC lab integrating Microsoft Sysmon with Wazuh SIEM for Windows endpoint monitoring, security event collection, alertinvestigation, and MITRE ATT&CK mapping.
