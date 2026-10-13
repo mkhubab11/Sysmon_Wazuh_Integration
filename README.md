@@ -57,21 +57,21 @@ The goal was to understand how endpoint telemetry can help SOC analysts investig
                  │ Event Collection
                  ▼
 ┌──────────────────────────────────┐
-│         Wazuh Manager             │
+│         Wazuh Manager            │
 │                                  │
-│  Event Processing and Alerting    │
-│  Security Event Analysis          │
-│  MITRE ATT&CK Mapping             │
+│  Event Processing and Alerting   │
+│  Security Event Analysis         │
+│  MITRE ATT&CK Mapping            │
 └────────────────┬─────────────────┘
                  │
                  ▼
 ┌──────────────────────────────────┐
-│        Wazuh Dashboard            │
+│        Wazuh Dashboard           │
 │                                  │
-│  Security Alerts                  │
-│  Threat Hunting                   │
-│  Event Investigation              │
-│  MITRE ATT&CK Visualization       │
+│  Security Alerts                 │
+│  Threat Hunting                  │
+│  Event Investigation             │
+│  MITRE ATT&CK Visualization      │
 └──────────────────────────────────┘
 ```
 
@@ -273,5 +273,3 @@ The project demonstrated the following:
 
 * **LinkedIn:** [Muhammad Khubab](https://www.linkedin.com/in/muhammad-khubab-475046204)
 
-
-> A hands-on SOC lab integrating Microsoft Sysmon with Wazuh SIEM for Windows endpoint monitoring, security event collection, alertinvestigation, and MITRE ATT&CK mapping.
